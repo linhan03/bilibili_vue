@@ -26,7 +26,7 @@ npm run e2e
 # run all tests
 npm test
 ```
-# 这是一个Vue项目
+# 这是一个Vue项目 
 
 # [开源协议的异同](https://img-my.csdn.net/uploads/201204/08/1333882488_6318.png)
 
