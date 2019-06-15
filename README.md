@@ -36,12 +36,12 @@ npm test
 3. git push
 
 ## 制作首页APP组件
-1. 完成Header区域，使用Mint-UI中的Header组件
-2. 制作底部的Tabbar区域，使用MUI的Tabbar.html
-    + 制作 购物车 小图标：
-    + 拷贝css样式和ttf文件
-    + 为 购物车 小图标 添加对应样式
-3. 要在中间区域放置一个router-view来展示路由匹配到的组件
+    1. 完成Header区域，使用Mint-UI中的Header组件
+    2. 制作底部的Tabbar区域，使用MUI的Tabbar.html
+        + 制作 购物车 小图标：
+        + 拷贝css样式和ttf文件
+        + 为 购物车 小图标 添加对应样式
+    3. 要在中间区域放置一个router-view来展示路由匹配到的组件
 
 ## 改造 tabbar为router-link 设置路由高亮
 
