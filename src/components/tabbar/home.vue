@@ -9,38 +9,38 @@
     <div class="mui-content">
       <ul class="mui-table-view mui-grid-view mui-grid-9">
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-          <a href="#">
-            <img src="../../images/娱乐.png" alt="">
+          <router-link to="/home/newslist">
+            <img src="../../images/娱乐.png" alt>
             <div class="mui-media-body">新闻资讯</div>
-          </a>
+          </router-link>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <a href="#">
-            <img src="../../images/画画.png" alt="">
+            <img src="../../images/画画.png" alt>
             <div class="mui-media-body">图片分享</div>
           </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <a href="#">
-            <img src="../../images/商店.png" alt="">
+            <img src="../../images/商店.png" alt>
             <div class="mui-media-body">商品购买</div>
           </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <a href="#">
-            <img src="../../images/天气.png" alt="">
+            <img src="../../images/天气.png" alt>
             <div class="mui-media-body">留言反馈</div>
           </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <a href="#">
-            <img src="../../images/视频.png" alt="">
+            <img src="../../images/视频.png" alt>
             <div class="mui-media-body">视频专区</div>
           </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <a href="#">
-            <img src="../../images/相机.png" alt="">
+            <img src="../../images/相机.png" alt>
             <div class="mui-media-body">联系我们</div>
           </a>
         </li>
@@ -66,7 +66,7 @@ export default {
     getLunbotu() {
       // 返回对象{status:0,{url:xxx,img:xxx}}
       this.$http
-        .get("http://vue.studyit.io/api/getlunbo")
+        .get("api/getlunbo")
         .then(result => {
           // console.log(result.body);
           if (result.body.status === 0) {
@@ -76,7 +76,7 @@ export default {
           }
         })
         .catch(error => {
-          Toast("请求失败");
+          Toast("请求轮播图失败");
         });
     }
   }
@@ -100,18 +100,18 @@ export default {
   width: 100%;
   height: 100%;
 }
-.mui-grid-view.mui-grid-9{
+.mui-grid-view.mui-grid-9 {
   background-color: #fff;
   border: none;
 }
-.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
   border: none;
 }
-.mui-grid-view.mui-grid-9 .mui-table-view-cell img{
+.mui-grid-view.mui-grid-9 .mui-table-view-cell img {
   width: 60px;
   height: 60px;
 }
-.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
   font-size: 13px;
 }
 </style>

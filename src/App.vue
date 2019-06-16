@@ -40,7 +40,7 @@ export default {
 <style>
 .app-container {
   padding-top: 40px;
-
+  padding-bottom: 50px;
   /* 这个设置 会固定 header 和 tabbar */
   overflow-x: hidden;
 }

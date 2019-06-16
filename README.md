@@ -55,4 +55,26 @@ npm test
 
 ## 改造 九宫格 区域样式
 
+## 改造新闻资讯 路由链接 页面制作（绘制页面->使用vue-resource获取数据->渲染真实数据
+
+## 实现 新闻资讯列表 点击跳转到新闻详情
+    1. 把列表中的每一项改造为 router-link ，并提供唯一ID标识符
+    2. 创建新闻详情组件 newsinfo.vue
+    3. 添加对应路由
+
+## 实现 新闻详情 的页面布局和数据渲染
+
+## 单独封装一个 comment.vue 评论子组件
+    1. 创建组件
+    2. 需要的页面引入组件`import component from './comment.vue'`
+    3. 使用 components 属性导入组件
+    4. 以标签形式 在页面中引用
+
+## 获取所有评论数据显示到页面中
+
+## 实现店家加载更多评论的功能
+    1. 为 加载更多按钮，绑定事件，请求下一页数据
+    2. pageIndex++,重新调用this.getComments()
+    3. 将新评论追加到commentList
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
