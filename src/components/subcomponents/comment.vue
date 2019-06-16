@@ -2,8 +2,8 @@
   <div class="cmt-container">
     <h3>发表评论</h3>
     <hr>
-    <textarea placeholder="输入评论内容(最多120字)" maxlength="120"></textarea>
-    <mt-button type="primary" size="large">发表评论</mt-button>
+    <textarea placeholder="输入评论内容(最多120字)" maxlength="120" v-model="msg"></textarea>
+    <mt-button type="primary" size="large" @click="postComment">发表评论</mt-button>
     <div class="cmt-list">
       <div class="cmt-item">
         <div class="cmt-title">第一楼&nbsp;&nbsp;用户：匿名用户&nbsp;&nbsp;发表时间：2012-12-12 12:12：12</div>
@@ -35,7 +35,8 @@ export default {
   data() {
     return {
       pageindex: 1, //默认展示第一页数据
-      commentList: []
+      commentList: [],
+      msg: "" //评论输入内容
     };
   },
   created() {
@@ -55,13 +56,38 @@ export default {
         })
         .catch(err => {
           Toast("请求评论失败");
-          this.pageindex--;
         });
     },
     // 加载更多
     getMore() {
       this.pageindex++;
       this.getComments();
+    },
+    postComment() {
+      if (this.msg.trim().length === 0) {
+        return Toast("评论不能为空");
+      }
+      this.$http
+        .post("api/postcomment/" + this.$route.params.id, {
+          content: this.msg.trim()
+        })
+        .then(result => {
+          if (result.body.status === 0) {
+            var cmt = {
+              user_name: "匿名用户",
+              add_time: Date.now(),
+              content: this.msg.trim()
+            };
+            this.commentList.unshift(cmt);
+            this.msg = "";
+          } else {
+            Toast("发表评论失败");
+          }
+        })
+        .catch(err => {
+          Toast("保存评论失败");
+          this.msg = "";
+        });
     }
   },
   props: ["id"]

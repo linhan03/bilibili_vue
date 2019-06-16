@@ -77,4 +77,42 @@ npm test
     2. pageIndex++,重新调用this.getComments()
     3. 将新评论追加到commentList
 
+## 发表评论 
+    1. textarea 双向数据绑定
+    2. 事件绑定 
+    3. 数据校验
+    4. vue-resource 保存数据
+    5. 评论发表成功后，重新刷新列表，以查看最新评论x
+    6. 评论保存后只在前端添加自组评论,不重新请求评论列表√
+
+## 改造图片分享 按钮为路由链接并显示对应组件
+
+## 绘制图片列表 组件页面结构并美化样式
+
+## 实现 图片详情 中缩略图的功能
+    1. 使用插件 vue-preview
+    2. 获取所有图片列表并渲染
+
+    1. 顶部的滑动条 取消 .mui-fullscreen ,导入对应js文件并初始化,mui.js和bundle.js严格模式冲突:禁用webpck中严格模式
+    [babel-plugin-transform-remove-strict-mode](https://github.com/genify/babel-plugin-transform-remove-strict-mode)
+    [在vue_cli上使用mui或引入mui.js各种报错及问题](https://blog.csdn.net/u012815877/article/details/81187826)
+        + 引用mui.js后在/home/photolist刷新后报错[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See URL 并且无法切换底部tabbar
+        + 解决：把tabbar的样式类mui-tab-item的样式复制并重命名mui-tab-item-llb 难道是js里对dom的操作失效？但是还是能正常工作。是mui.js操作的csss相关而不是js相关?
+        + 在mouted时挂载mui的scroll
+        + 获取所有分类
+    2. 底部的图片内容,懒加载，之后渲染数据
+
+## 实现图片列表懒加载改造 和样式美化
+
+## 实现点击图片 跳转到 图片详情页面
+    1. 把li改为router-link时加上 tag="li"
+
+## 实现 详情页面布局和美化，同时获取数据，渲染页面
+
+## 绘制 商品列表 页面基本结构并美化
+
+## 尝试在手机上去进行项目的预览和测试
+    1. 保证手机和开发项目的电脑处于同一个wifi环境，手机可以访问电脑的IP
+    2. 打开 package.json 在dev脚本中 添加一个 --host 指令，把当前电脑的WIFI IP地址，设置为 --host 的指令值
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
