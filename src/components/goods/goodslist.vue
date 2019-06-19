@@ -67,6 +67,7 @@ export default {};
   padding: 7px;
   justify-content: space-between;
 }
+
 .goods-list .goods-item {
   width: 49%;
   border: 1px solid #ccc;
